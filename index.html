@@ -1,0 +1,198 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JTG Eats - Home</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!--............... navbar section -->
+    <header class="navbar">
+      <div class="logo">JTGeats</div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#kitchen">Menu</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Right Side Icons -->
+      <div class="nav-icons">
+        <img src="assets/icons/search.png" alt="Search" />
+        <div class="cart-icon-wrapper">
+          <img src="assets/icons/card.png" alt="Cart" id="cartIcon" />
+          <span class="cart-count" id="cartCount">0</span>
+          <div class="cart-box" id="cartBox">
+            <h4>Cart Items</h4>
+            <ul id="cartList"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!--  Hamburger Icon -->
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </header>
+
+    <!--  Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          Authentic Home <br />
+          food in India
+        </h1>
+        <p>
+          JTG Eats is a courier service in which authentic home-cooked food is
+          delivered to customers.
+        </p>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search food you love"
+          />
+          <button onclick="searchFood()">Search</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/cuate.svg" alt="Cooking" />
+      </div>
+    </section>
+
+    <!-- Kitchen Section -->
+    <section class="kitchen-section" id="kitchen">
+      <h2 class="section-heading">Our Kitchen</h2>
+      <div class="kitchen-container" id="productGrid">
+        <!-- Cards will be injected here -->
+      </div>
+    </section>
+
+    <!--  Popular Items Section  -->
+    <section class="popular-items" id="popular">
+      <h2 class="section-heading">Popular Items</h2>
+
+      <div class="carousel-wrapper">
+        <button class="scroll-btn left" id="prevBtn">&#10094;</button>
+
+        <div class="scroll-carousel" id="popularCarousel">
+          <!-- Cards will be injected by JS -->
+        </div>
+
+        <button class="scroll-btn right" id="nextBtn">&#10095;</button>
+      </div>
+
+      <div class="request-btn-container">
+        <button id="openRequest">Request Dish</button>
+      </div>
+    </section>
+
+    <!--  Dish Modal -->
+    <div class="dish-modal" id="dishRequestBox">
+      <div class="modal-content">
+        <h3>Request Your Favorite Dish</h3>
+        <input type="text" placeholder="Dish Name" />
+        <textarea placeholder="Special Instructions"></textarea>
+        <div class="modal-actions">
+          <button id="cancelModal">Cancel</button>
+          <button id="submitRequest">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ..... video section -->
+    <section class="video-section" id="video">
+      <div class="video-wrapper">
+        <div class="video-content">
+          <h2>We are providing best home cooked food delivery service.</h2>
+          <p>
+            Away from home and craving the tasty homemade recipes? Choose from a
+            selection of our delicious home cooked dishes
+          </p>
+        </div>
+
+        <video
+          id="promoVideo"
+          width="877"
+          height="442"
+          poster="assets/images/video-poster.jpg"
+        >
+          <source src="assets/video/food-promotion.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!--  Content  Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-form-box">
+          <h2>Do you have a question<br />or want to become a seller?</h2>
+          <p>
+            Fill this form and our manager will contact you in the next 48
+            hours.
+          </p>
+
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div class="contact-image">
+          <img src="assets/images/why-choose-us.svg" alt="Why Choose Us" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">JTGeats</div>
+
+        <nav class="footer-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Menu</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact</a>
+        </nav>
+
+        <div class="footer-social">
+          <a
+            href="https://www.linkedin.com/company/josh-technology-group/posts/?feedView=all"
+            aria-label="linkedin"
+          >
+            <img src="assets/icons/linkedin.png" alt="Linkedin" />
+          </a>
+          <a
+            href="https://www.facebook.com/share/1CkPudsiBb/"
+            aria-label="Facebook"
+          >
+            <img src="assets/icons/facebook.png" alt="Facebook" />
+          </a>
+          <a
+            href="https://www.instagram.com/joshtechnologygroup?igsh=MWo3NzNqM2E5dXNzYg=="
+            aria-label="Instagram"
+          >
+            <img src="assets/icons/insta.png" alt="Instagram" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/popular-data.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>
